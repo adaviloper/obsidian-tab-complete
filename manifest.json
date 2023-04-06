@@ -1,11 +1,10 @@
 {
-	"id": "obsidian-sample-plugin",
-	"name": "Sample Plugin",
-	"version": "1.0.0",
+	"id": "obsidian-tab-complete",
+	"name": "Tab Complete",
+	"version": "0.1.0",
 	"minAppVersion": "0.15.0",
-	"description": "This is a sample plugin for Obsidian. This plugin demonstrates some of the capabilities of the Obsidian API.",
-	"author": "Obsidian",
-	"authorUrl": "https://obsidian.md",
-	"fundingUrl": "https://obsidian.md/pricing",
-	"isDesktopOnly": false
+	"description": "This plugin is used for tab-completing the file paths when creating new files.",
+	"author": "adaviloper",
+	"authorUrl": "https://github.com/adaviloper/obsidian-tab-complete",
+	"isDesktopOnly": true
 }
