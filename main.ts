@@ -2,7 +2,7 @@ import { App, normalizePath, Notice, Plugin, SuggestModal, TFile } from 'obsidia
 
 // Remember to rename these classes and interfaces!
 
-interface MyPluginSettings {
+interface TabCompleteSettings {
 	suggestionPlaceholder: string;
 	defaultSuggestionId: string;
 }
@@ -14,19 +14,19 @@ interface TabCompleteSuggestion {
 	isDefault: boolean;
 }
 
-const DEFAULT_SETTINGS: MyPluginSettings = {
-	suggestionPlaceholder: 'Create or open note...',
+const DEFAULT_SETTINGS: TabCompleteSettings = {
+	suggestionPlaceholder: 'Create or find note...',
 	defaultSuggestionId: 'default-suggestions',
 }
 
 export default class MyPlugin extends Plugin {
-	settings: MyPluginSettings;
+	settings: TabCompleteSettings;
 
 	async onload() {
 		// This adds a simple command that can be triggered anywhere
 		this.addCommand({
 			id: 'tab-complete-create-or-find-note-command',
-			name: 'Tab Complete: Create of find note',
+			name: 'Tab Complete: Create or find note',
 			callback: () => {
 				new TabCompleteSuggestionModal(this.app).open();
 			}
@@ -48,9 +48,7 @@ export default class MyPlugin extends Plugin {
 			}
 			if (event.key === 'Tab') {
 				event.preventDefault();
-				const files            = getFiles();
-				const inputValue       = target.value;
-				const matchingSuggestions = files.filter(file => file.path.indexOf(inputValue) === 0);
+				const matchingSuggestions = getFiles().filter(file => file.path.indexOf(target.value) === 0);
 				if (matchingSuggestions.length === 1) {
 					target.value = matchingSuggestions[0].path;
 				} else if (matchingSuggestions.length > 1) {
