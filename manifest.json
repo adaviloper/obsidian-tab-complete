@@ -1,5 +1,5 @@
 {
-	"id": "obsidian-tab-complete",
+	"id": "tab-complete",
 	"name": "Tab Complete",
 	"version": "0.2.0",
 	"minAppVersion": "1.1.16",
