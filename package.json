@@ -1,7 +1,7 @@
 {
-	"name": "obsidian-sample-plugin",
+	"name": "obsidian-tab-complete",
 	"version": "1.0.0",
-	"description": "This is a sample plugin for Obsidian (https://obsidian.md)",
+	"description": "This plugin is meant to add tab-complete functionality to the Open or Create modal window window",
 	"main": "main.js",
 	"scripts": {
 		"dev": "node esbuild.config.mjs",
