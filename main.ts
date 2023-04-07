@@ -39,19 +39,23 @@ export default class MyPlugin extends Plugin {
 
 	handleTabInput(app: App) {
 		return (event: KeyboardEvent) => {
-			if (event.target.placeholder !== DEFAULT_SETTINGS.suggestionPlaceholder) {
+			if (!event.target) {
+				return;
+			}
+			const target = event.target as HTMLInputElement
+			if (target.placeholder !== DEFAULT_SETTINGS.suggestionPlaceholder) {
 				return;
 			}
 			if (event.key === 'Tab') {
 				event.preventDefault();
 				const files            = getFiles();
-				const inputValue       = event.target.value;
+				const inputValue       = target.value;
 				const matchingSuggestions = files.filter(file => file.path.indexOf(inputValue) === 0);
 				if (matchingSuggestions.length === 1) {
-					event.target.value = matchingSuggestions[0].path;
+					target.value = matchingSuggestions[0].path;
 				} else if (matchingSuggestions.length > 1) {
 					const commonPrefix = this.getCommonPrefix(matchingSuggestions);
-					event.target.value = commonPrefix;
+					target.value = commonPrefix;
 					matchingSuggestions[0].path = commonPrefix
 					const defaultSuggestion = document.getElementById(DEFAULT_SETTINGS.defaultSuggestionId);
 					if (defaultSuggestion) {
@@ -129,7 +133,7 @@ class TabCompleteSuggestionModal extends SuggestModal<TabCompleteSuggestion> {
 		}
 	}
 
-	async onChooseSuggestion (suggestion: TabCompleteSuggestion, event: MouseEvent | KeyboardEvent): any {
+	async onChooseSuggestion (suggestion: TabCompleteSuggestion, event: MouseEvent | KeyboardEvent): Promise<any> {
 		let note = suggestion.file
 		if (!note) {
 			try {

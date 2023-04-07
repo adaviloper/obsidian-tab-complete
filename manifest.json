@@ -1,8 +1,8 @@
 {
 	"id": "obsidian-tab-complete",
 	"name": "Tab Complete",
-	"version": "0.1.0",
-	"minAppVersion": "0.15.0",
+	"version": "1.0.0",
+	"minAppVersion": "1.1.16",
 	"description": "This plugin is used for tab-completing the file paths when creating new files.",
 	"author": "adaviloper",
 	"authorUrl": "https://github.com/adaviloper/obsidian-tab-complete",
