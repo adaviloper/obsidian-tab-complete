@@ -19,7 +19,7 @@ const DEFAULT_SETTINGS: TabCompleteSettings = {
 	defaultSuggestionId: 'default-suggestions',
 }
 
-export default class MyPlugin extends Plugin {
+export default class TabCompletePlugin extends Plugin {
 	settings: TabCompleteSettings;
 
 	async onload() {
