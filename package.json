@@ -1,6 +1,6 @@
 {
 	"name": "obsidian-tab-complete",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"description": "This plugin is meant to add tab-complete functionality to the Open or Create modal window window",
 	"main": "main.js",
 	"scripts": {

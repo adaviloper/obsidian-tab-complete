@@ -1,7 +1,7 @@
 {
 	"id": "tab-complete",
 	"name": "Tab Complete",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"minAppVersion": "1.1.16",
 	"description": "This plugin is used for tab-completing the file paths when creating new files.",
 	"author": "adaviloper",
