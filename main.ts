@@ -25,7 +25,7 @@ export default class TabCompletePlugin extends Plugin {
 	async onload() {
 		// This adds a simple command that can be triggered anywhere
 		this.addCommand({
-			id: 'tab-complete-create-or-find-note-command',
+			id: 'create-or-find-note-command',
 			name: 'Tab Complete: Create or find note',
 			callback: () => {
 				new TabCompleteSuggestionModal(this.app).open();
